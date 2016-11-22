@@ -1,4 +1,4 @@
-README
+Learning Rails [![Build Status](https://travis-ci.org/flaminisx/kolyan-hw.svg?branch=master)](https://travis-ci.org/flaminisx/kolyan-hw)
 ======
 (for Nickolas)
 To start:
