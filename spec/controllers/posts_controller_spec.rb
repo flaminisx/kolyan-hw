@@ -13,14 +13,15 @@ RSpec.describe PostsController, type: :controller do
     expect(starting_count + 1).to eq(Post.count)
   end
   it 'get /posts/:id/edit should return success' do
-    get :edit
+    post = Post.first
+    get :edit, id: post.id
     expect(response).to have_http_status(:success)
   end
   it 'put /posts/:id should change post value' do
     post = Post.first
     content = Post.first.content
-    put :update, { post: {id: post.id, title: "Another title" } }
-    expect(response).to have_http_status(:success)
+    put :update, id: post.id, post: {id: post.id, title: "Another title" }
+    expect(response).to have_http_status(302)
     expect(Post.first.title).to eq("Another title")
     expect(Post.first.content).to eq(content) # expect Post content to not be changed
   end
