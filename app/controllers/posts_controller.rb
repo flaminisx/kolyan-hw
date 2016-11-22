@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
+
+  # TODO: add index, edit, update and delete actions.
+  # TODO: use partial for new and edit views
+
   def new
     @post = Post.new
   end
@@ -6,9 +10,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new post_params
     if @post.save
-      render json: @post
+      render json: @post, status: 201
     else
-      render plain: "hui"
+      render plain: "Not Valid data!", status: 422
     end
   end
 
