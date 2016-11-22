@@ -1,0 +1,10 @@
+<% content_for :title do %>
+  Blog | home
+<% end %>
+
+<h1>Latest posts:</h1>
+<% @posts.each do |post| %>
+  <h3><%= "Post##{post.id}: #{post.title}" %></h3>
+  <p> <%= post.content %> </p>
+<% end %>
+<%= link_to "New Post!", new_post_path %>
