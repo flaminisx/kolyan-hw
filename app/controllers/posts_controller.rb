@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new post_params
     if @post.save
-      render :show, status: 201
+      redirect_to root_path
     else
       render plain: "Not Valid data!", status: 422
     end
@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   end
   def destroy
     Post.find(params[:id]).delete 
-    redirect_to posts_path
+    redirect_to root_path
   end 
   def edit
     @post = Post.find(params[:id])
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update post_params
-    redirect_to post_path(@post)
+    redirect_to root_path
   end
   private
 
