@@ -1,2 +1,3 @@
+  <h2><%=link_to post.user.email, user_root_path(post.user)%></h2>
   <h3 ><%= "Post##{post.id}: #{post.title}" %> </h3><h5><%= link_to "Delete", post_path(post), :method => :delete %>&nbsp <%= link_to "Edit", edit_post_path(post) %></h5>
   <p> <%= post.content %> </p>

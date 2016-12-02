@@ -1,0 +1,7 @@
+<<%= form_for @user :html => {:multipart => true} do |f| %>
+  <%= f.label :email  %>
+  <br>
+ <% =f.file_field :avatar %>
+
+  <%= f.submit %>
+<% end %>
