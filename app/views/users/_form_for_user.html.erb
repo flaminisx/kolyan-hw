@@ -1,7 +1,9 @@
-<<%= form_for @user :html => {:multipart => true} do |f| %>
-  <%= f.label :email  %>
-  <br>
- <% =f.file_field :avatar %>
-
-  <%= f.submit %>
-<% end %>
+<%= form_for @user, :html => {:multipart => true} do |f| %>   
+  <p>
+    <label>My Avatar</label>
+    <%= image_tag(@user.avatar_url) if @user.avatar? %> 
+    <%= f.file_field :avatar %>
+    <%= f.hidden_field :avatar_cache %> 
+    <%= f.submit%>
+    <%end%>
+    </p>

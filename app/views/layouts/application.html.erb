@@ -7,14 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h2><%= link_to "Home Page", root_path%></h2>
-<% if user_signed_in? %>
-    <span>Здравствуйте, <%=link_to current_user.email, user_root_path(current_user) %></span>
-    <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
-<% else %>
-    <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
-<% end %>
-<%= yield %>
-
+<div class="container">
+	<div class="header">
+		<div class="homepage"><%= link_to "Home Page", root_path%></div>
+		<div class="nav">
+			<% if user_signed_in? %>
+			    <span>Здравствуйте, <%=link_to current_user.email, user_path(current_user) %></span>
+			    <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+			<% else %>
+			    <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+			<% end %>
+		</div>
+	</div>
+	<%= yield %>
+</div>
 </body>
 </html>

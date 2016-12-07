@@ -27,6 +27,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if current_user == @post.user
       @post.delete
+    redirect_to root_path
     end 
   end 
   def edit

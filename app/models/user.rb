@@ -4,6 +4,6 @@ class User < ActiveRecord::Base
   	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   	has_many :posts
+  	mount_uploader :avatar, AvatarUploader
 
-	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 end
