@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rspec-rails'
 gem 'devise'
-gem 'paperclip'
+gem 'mini_magick', '4.5.1'
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
